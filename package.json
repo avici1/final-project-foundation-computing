@@ -1,0 +1,8 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gal1l0/final-project-foundation-computing.git",
+  "author": "Alain Christian <48126545+gal1l0@users.noreply.github.com>",
+  "license": "MIT"
+}

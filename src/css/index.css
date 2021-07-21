@@ -1,0 +1,94 @@
+.flex-container-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #FDB47E;
+  position: relative;
+  width: 100%;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.no-decoration-list {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+}
+
+.no-decoration-list-item {
+  margin-left: 10px;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+  text-decoration: underline;
+}
+.active {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.71);
+}
+
+#root {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#welcome-section {
+  background-image: linear-gradient(
+    269.88deg,
+    #ffffff -2.69%,
+    #ffffff 32.5%,
+    rgba(255, 255, 255, 0) 102.86%
+  ), url('../images/pexels-ella.jpg');
+  width: 1440px;
+  height: 590px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.no-flip {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+#welcome-note-big {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 112px;
+    width: 529px;
+    height: 273px;
+}
+#welcome-note-small {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top: 380px;
+    left: 54px;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 33px;
+    width: 691px;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.61);
+}
+
+#order-now {
+    position: absolute;
+    width: 218px;
+    height: 52px;
+    /* left: 134px;
+    top: 596px; */
+    left:54px;
+    top: 450px;
+    background-color: #FDB47E;
+    border: 1px solid #e9dab2;
+    border-radius: 10px;
+    color:whitesmoke;
+    font-size: medium;
+    box-shadow: 0px 4px 30px #FDB47E;
+}
