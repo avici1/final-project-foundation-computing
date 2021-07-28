@@ -27,16 +27,48 @@
             <a href="./menu.html">Menu</a>
           </li>
           <li class="no-decoration-list-item">
-            <a href="./cart.html">Cart</a>
+            
           </li>
         </ul>
       </div>
       <div id="upbox">
+        <button type="button" class="btn btn-primary" id="modal-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="bi-bag"></i>  Cart
+        </button>
         <input type="text" placeholder="Search menu Items" id="search-box" />
-        <button class="normal-btn" id="btn">Search</button>
+        <button class="normal-btn" id="btn"><i class="bi-search"></i> search</button>
       </div>
-      <span id="welcome-note"> Enjoy one of many dishes </span> <br />
+      <span id="welcome-note"> Enjoy one of our many dishes </span> <br />
       <div class="flex-container-grid" id="menu-content"></div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cart content</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body">
+               
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -46,23 +78,18 @@
     ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module">
-      import { FillElements, addToCart } from "../js/menu.js";
+      import { FillElements, addToCart, populateCartData } from "../js/menu.js";
       document.getElementById("btn").addEventListener("click", async (e) => {
         await FillElements();
-        const arr = Array.from(document.getElementsByClassName("cart-btn"));
-        console.log(typeof arr[0]);
-        arr.forEach((el) => {
-          console.log(typeof el);
-          el.addEventListener("click", async (e) => {
-            console.log(typeof el);
-          });
-        });
       });
       document.addEventListener('click', e => {
         const className = e.target.className.split(' ')[1];
         if (className === 'cart-btn') {
           addToCart(e.target.value);
         }
+      })
+      document.getElementById('modal-btn').addEventListener('click', e => {
+        populateCartData()
       })
     </script>
     <!-- <script type="text/JavaScript" src="../js/menu.js"></script> -->
