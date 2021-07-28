@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu, Food Co.</title>
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="flex-container-center">
+        <ul class="no-decoration-list">
+          <li class="no-decoration-list-item">
+            <a href="./index.html">Home</a>
+          </li>
+          <li class="no-decoration-list-item active">
+            <a href="./menu.html">Menu</a>
+          </li>
+          <li class="no-decoration-list-item">
+            <a href="./cart.html">Cart</a>
+          </li>
+        </ul>
+      </div>
+      <div id="upbox">
+        <input type="text" placeholder="Search menu Items" id="search-box" />
+        <button class="normal-btn" id="btn">Search</button>
+      </div>
+      <span id="welcome-note"> Enjoy one of many dishes </span> <br />
+      <div class="flex-container-grid" id="menu-content"></div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module">
+      import { FillElements, addToCart } from "../js/menu.js";
+      document.getElementById("btn").addEventListener("click", async (e) => {
+        await FillElements();
+        const arr = Array.from(document.getElementsByClassName("cart-btn"));
+        console.log(typeof arr[0]);
+        arr.forEach((el) => {
+          console.log(typeof el);
+          el.addEventListener("click", async (e) => {
+            console.log(typeof el);
+          });
+        });
+      });
+      document.addEventListener('click', e => {
+        const className = e.target.className.split(' ')[1];
+        if (className === 'cart-btn') {
+          addToCart(e.target.value);
+        }
+      })
+    </script>
+    <!-- <script type="text/JavaScript" src="../js/menu.js"></script> -->
+  </body>
+</html>

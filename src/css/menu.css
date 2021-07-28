@@ -1,0 +1,61 @@
+.flex-container-grid {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  top: 150;
+}
+.flex-item {
+  border-radius: 50px;
+  background: #e0e0e0;
+  top: 150px;
+}
+#upbox {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  top: 60px;
+  margin-bottom: 150px;
+  left: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+}
+.normal-btn {
+  margin-left: 10px;
+  background-color: #FDB47E;
+  border: 1px solid #e9dab2;
+  border-radius: 3px;
+  color:whitesmoke;
+  font-size: 20px;
+  box-shadow: 0px 4px 10px #FDB47E;
+}
+
+#welcome-note {
+  display: flex;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  top: -50px;
+  left: 50px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.btn-primary {
+  background-color: #FDB47E;
+  border-color: #FDB47E;
+  box-shadow: 0px 4px 10px #FDB47E;
+
+}
+
+.card-img-top {
+  width: 100%;
+  height: 50%;
+}
