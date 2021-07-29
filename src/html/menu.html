@@ -35,11 +35,14 @@
         <button type="button" class="btn btn-primary" id="modal-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i class="bi-bag"></i>  Cart
         </button>
-        <input type="text" placeholder="Search menu Items" id="search-box" />
-        <button class="normal-btn" id="btn"><i class="bi-search"></i> search</button>
       </div>
-      <span id="welcome-note"> Enjoy one of our many dishes </span> <br />
-      <div class="flex-container-grid" id="menu-content"></div>
+      <span id="welcome-note"> Fish dishes </span> <br />
+      <div class="flex-container-grid" id="menu-content-fish"></div>
+      <span id="welcome-note"> Drinks </span> <br />
+      <div class="flex-container-grid" id="menu-content-smoothies"></div>
+      <span id="welcome-note"> Vegan dishes </span> <br />
+      <div class="flex-container-grid" id="menu-content-vegetable"></div>
+      
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -61,9 +64,12 @@
                
                 </tbody>
               </table>
+              <div class="modal-footer" id="modal-footer-container">
+              
+              </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Clear</button>
               <button type="button" class="btn btn-primary">Buy</button>
             </div>
           </div>
@@ -79,9 +85,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module">
       import { FillElements, addToCart, populateCartData } from "../js/menu.js";
-      document.getElementById("btn").addEventListener("click", async (e) => {
-        await FillElements();
-      });
+      document.addEventListener('DOMContentLoaded', async(e) => {
+        await FillElements('fish', 'menu-content-fish')
+        await FillElements('smoothies', 'menu-content-smoothies')
+        await FillElements('vegetable', 'menu-content-vegetable')
+
+      })
       document.addEventListener('click', e => {
         const className = e.target.className.split(' ')[1];
         if (className === 'cart-btn') {
@@ -89,7 +98,11 @@
         }
       })
       document.getElementById('modal-btn').addEventListener('click', e => {
-        populateCartData()
+        populateCartData();
+      })
+
+      document.getElementById('close-btn').addEventListener('click', e => {
+        window.localStorage.clear();
       })
     </script>
     <!-- <script type="text/JavaScript" src="../js/menu.js"></script> -->
